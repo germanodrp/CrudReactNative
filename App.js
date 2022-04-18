@@ -1,9 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { StyleSheet, Text, TextInput, View, Button } from 'react-native';
+import api from './src/services/Api';
 
 export default function App() {
-
+  
   const [pais, setPais] = useState('')
 
 
@@ -13,11 +14,8 @@ export default function App() {
   }
 
 
-  const clear = () => {
-      setPais("")
-      
-    / setInfo()
-  }
+  
+  
   return (
     <View style={styles.viewContainer}>
     <Text style={styles.text}>Pais : </Text>
@@ -37,16 +35,10 @@ export default function App() {
      color='green'
      accessibilityLabel='Clique aqui para Buscar Pais'
    />
-   <Separator/>
-   <Button
-     onPress={clear}
-     title='Limpa'
-     color='red'
-     accessibilityLabel='Botão para limpar os valores'
-   />
+   
    <Separator />
    <Text style={styles.input}>
-    Pais é: {pais} 
+    Paises: {pais} 
    </Text>
  </View>
   );
